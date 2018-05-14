@@ -1,19 +1,23 @@
-<div class="row cabecera">
-    <app-header></app-header>
-</div>
-<div style="background-color:green" class="row">
-    <div class="col-md-3">
-        <app-sidebar></app-sidebar>
-    </div>
-    <div class="col-md-9">
-        <div style="background-color:yellow;" class="row">
-            <app-breadcrumbs></app-breadcrumbs>
+<div class="layout layout-vertical layout-left-navigation layout-above-toolbar">
+    <main>
+        <nav id="toolbar" class="bg-white">
+            <app-header></app-header>
+        </nav>
+        <div id="wrapper">
+            <aside id="aside" class="aside aside-left" data-fuse-bar="aside" data-fuse-bar-media-step="md" data-fuse-bar-position="left">
+                <app-sidebar></app-sidebar>
+            </aside>
+            <div class="content-wrapper">
+                <div>
+                    <app-breadcrumbs></app-breadcrumbs>
+                </div>
+                <ui-view name="actions">
+                    actions@app
+                </ui-view>
+                <ui-view name="content">
+                    content@app
+                </ui-view>
+            </div>
         </div>
-        <ui-view name="actions" style="background-color:blue;" class="row">
-            actions@app
-        </ui-view>
-        <ui-view name="content" style="background-color:red;" class="row">
-            content@app
-        </ui-view>
-    </div>
+    </main>
 </div>
